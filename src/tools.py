@@ -21,8 +21,6 @@ def execute_erp_payment(po_number: str, amount: float) -> dict:
     """
     time.sleep(1)
     
-    # We will let the LangGraph state manage the simulated failure for the demo,
-    # but this function represents the actual connection point.
     return {
         "status": "success",
         "transaction_id": f"TXN-{random.randint(10000, 99999)}",

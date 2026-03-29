@@ -6,13 +6,13 @@ def route_after_compliance(state: WorkflowState):
     if state["compliance_status"] == "APPROVED":
         return "execution"
     else:
-        return "human_review" # Ends workflow for manual intervention
+        return "human_review"
 
 def route_after_execution(state: WorkflowState):
     if state["execution_status"] == "FAILED" and state["error_count"] < 3:
         state["audit_log"].append("System: Self-correcting, retrying execution.")
         return "execution" 
-    return "end"  # <--- Return the string "end" instead
+    return "end"
 
 def build_workflow():
     workflow = StateGraph(WorkflowState)

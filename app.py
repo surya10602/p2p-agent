@@ -38,7 +38,7 @@ if st.button("Run Autonomous Workflow"):
         with st.spinner("Multi-agent system initialized..."):
             app = build_workflow()
             
-            # Pass the content (text string OR multimodal list) into the state graph
+            # Pass the content into the state graph
             initial_state = {
                 "invoice_text": invoice_payload, 
                 "extracted_data": None,

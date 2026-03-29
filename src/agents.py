@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Initialize Gemini 1.5 Flash for high-speed, enterprise-grade extraction
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
     temperature=0,
